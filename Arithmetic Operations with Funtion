@@ -1,0 +1,76 @@
+/*
+ * File        : arithmetic_operations.c with funtion
+ * Description : A C program that performs basic arithmetic operations 
+ *               (addition, subtraction, multiplication, division, and modulus)
+ *               using functions.
+ */
+
+#include <stdio.h>
+
+// Function prototypes
+int sum(int a, int b);
+int subtract(int a, int b);
+int multiply(int a, int b);
+int divide(int a, int b);
+int mod(int a, int b);
+
+int main() {
+    int num1, num2;
+    int add, sub, mult, div, remainder;
+
+    // Taking user input
+    printf("\nEnter numbers within 1 - 500");
+    
+    printf("\nEnter Number 1:\t");
+    scanf("%d", &num1);
+
+    printf("Enter Number 2:\t");
+    scanf("%d", &num2);
+
+    // Performing operations
+    add = sum(num1, num2);
+    sub = subtract(num1, num2);
+    mult = multiply(num1, num2);
+
+    // Handling division and modulus to prevent division by zero
+    if (num2 != 0) {
+        div = divide(num1, num2);
+        remainder = mod(num1, num2);
+    } else {
+        printf("\nError: Division by zero is not allowed.\n");
+        div = remainder = 0;
+    }
+
+    // Displaying results
+    printf("\nThe sum is: %d", add);
+    printf("\nThe difference is: %d", sub);
+    printf("\nThe product is: %d", mult);
+
+    if (num2 != 0) {
+        printf("\nThe quotient is: %d", div);
+        printf("\nThe remainder is: %d\n", remainder);
+    }
+
+    return 0;
+}
+
+// Functions definitions
+int sum(int a, int b) {
+    return a + b;
+}
+
+int subtract(int a, int b) {
+    return a - b;
+}
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+int divide(int a, int b) {
+    return a / b;  // Integer division
+}
+
+int mod(int a, int b) {
+    return a % b;
+}
