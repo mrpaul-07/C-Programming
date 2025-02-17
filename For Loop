@@ -1,0 +1,28 @@
+/*
+ * File        : intro_for_loop.c
+ * Description : A simple C program demonstrating the use of a for loop.
+ *               The program takes a number as input and prints a sequence 
+ *               starting from 3 (i = 2 + 1) up to (num + 5).
+ */
+
+#include <stdio.h>
+
+int main(void) {
+    int i, num;
+
+    // Initialize i to 2
+    i = 2;
+
+    // User input
+    printf("\nEnter a number:\t");
+    scanf("%d", &num);
+
+    // Loop starting from i+1 and running until num+5
+    for (i = i + 1; i <= num + 5; i++) {
+        printf("%d ", i);
+    }
+
+    printf("\n");
+
+    return 0;
+}
