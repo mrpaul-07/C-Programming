@@ -1,0 +1,100 @@
+/*
+ * File        : simple_calculator.c
+ * Description : A simple calculator program in C that performs 
+ *               addition, subtraction, multiplication, division, and modulus operations.
+ */
+
+#include <stdio.h>
+
+// Function prototypes
+int sum(int a, int b);
+int sub(int a, int b);
+int mult(int a, int b);
+int mod(int a, int b);
+float div(int a, int b);
+
+int main() {
+    int num1, num2, temp, ch;
+    float tempf;
+
+    // User input
+    printf("\nEnter numbers within 1 - 500");
+
+    printf("\nEnter Number 1:\t");
+    scanf("%d", &num1);
+
+    printf("Enter Number 2:\t");
+    scanf("%d", &num2);
+
+    // Menu for operation selection
+    printf("\nSelect an operation:");
+    printf("\n1 - Summation");
+    printf("\n2 - Subtraction");
+    printf("\n3 - Multiplication");
+    printf("\n4 - Division");
+    printf("\n5 - Modulus");
+    printf("\n6 - Exit");
+
+    printf("\n\nEnter your choice: ");
+    scanf("%d", &ch);
+
+    // Perform the selected operation
+    switch (ch) {
+        case 1:
+            temp = sum(num1, num2);
+            printf("\nThe sum is: %d\n", temp);
+            break;
+        case 2:
+            temp = sub(num1, num2);
+            printf("\nThe difference is: %d\n", temp);
+            break;
+        case 3:
+            temp = mult(num1, num2);
+            printf("\nThe product is: %d\n", temp);
+            break;
+        case 4:
+            if (num2 != 0) {
+                tempf = div(num1, num2);
+                printf("\nThe quotient is: %.2f\n", tempf);
+            } else {
+                printf("\nError: Division by zero is not allowed.\n");
+            }
+            break;
+        case 5:
+            if (num2 != 0) {
+                temp = mod(num1, num2);
+                printf("\nThe modulus is: %d\n", temp);
+            } else {
+                printf("\nError: Modulus by zero is not allowed.\n");
+            }
+            break;
+        case 6:
+            printf("\nYou selected to finish the program. Bye.\n");
+            return 0;
+        default:
+            printf("\nInvalid choice! Please select a valid option.\n");
+    }
+
+    return 0;
+}
+
+// Functions definitions
+int sum(int a, int b) {
+    return a + b;
+}
+
+int sub(int a, int b) {
+    return a - b;
+}
+
+int mult(int a, int b) {
+    return a * b;
+}
+
+int mod(int a, int b) {
+    return a % b;
+}
+
+float div(int a, int b) {
+    return (float)a / b;
+}
