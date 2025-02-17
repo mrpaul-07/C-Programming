@@ -1,0 +1,26 @@
+/*
+ * File        : conditional_statements.c
+ * Description : A simple C program demonstrating conditional statements (if-else).
+ */
+
+#include <stdio.h>
+
+int main(void) {
+    // Variable declaration
+    int a = 10, b = 20;
+
+    // First conditional check
+    if (a > 12) {
+        printf("\nOne");
+        printf("\nTwo");
+    }
+
+    // Second conditional check
+    if (b < a) {
+        printf("\nThree");
+    } else {
+        printf("\nFour");
+    }
+
+    return 0;
+}
