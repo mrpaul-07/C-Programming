@@ -1,0 +1,44 @@
+/*
+ * File        : basic_arithmetic.c
+ * Description : A simple C program that performs basic arithmetic operations 
+ *               (addition, subtraction, multiplication, and division) on two user-input integers.
+ */
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    int sum, difference, product, quotient;
+
+    // Taking user input
+    printf("\nEnter number 1: ");
+    scanf("%d", &num1);
+
+    printf("\nEnter number 2: ");
+    scanf("%d", &num2);
+
+    // Performing arithmetic operations
+    sum = num1 + num2;
+    difference = num1 - num2;
+    product = num1 * num2;
+
+    // Handling division carefully to avoid division by zero
+    if (num2 != 0) {
+        quotient = num1 / num2;
+    } else {
+        printf("\nError: Division by zero is not allowed.\n");
+        quotient = 0; // Setting to zero to prevent undefined behavior
+    }
+
+    // Displaying results
+    printf("\nNumber 1: %d\nNumber 2: %d\n", num1, num2);
+    printf("Addition: %d\n", sum);
+    printf("Subtraction: %d\n", difference);
+    printf("Multiplication: %d\n", product);
+    
+    if (num2 != 0) {
+        printf("Division: %d\n", quotient);
+    }
+
+    return 0;
+}
