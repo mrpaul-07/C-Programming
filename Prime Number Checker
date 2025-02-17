@@ -1,0 +1,36 @@
+/*
+ * File        : prime_number_checker.c
+ * Description : A simple C program to check whether a given number is prime.
+ */
+
+#include <stdio.h>
+
+int main(void) {
+    int i, num, flag = 1; // flag = 1 means prime, 0 means not prime
+
+    // User input
+    printf("\nEnter a number:\t");
+    scanf("%d", &num);
+
+    // Handle edge cases (negative numbers, 0, and 1 are not prime)
+    if (num <= 1) {
+        printf("\n%d is not a prime number.\n", num);
+        return 0;
+    }
+
+    // Check for divisibility from 2 to num-1
+    for (i = 2; i < num; i++) {
+        if (num % i == 0) {
+            printf("\n%d is not a prime number.\n", num);
+            flag = 0;
+            break;
+        }
+    }
+
+    // If flag remains 1, it's prime
+    if (flag == 1) {
+        printf("\n%d is a prime number.\n", num);
+    }
+
+    return 0;
+}
