@@ -1,0 +1,13 @@
+/*
+ * File: hello_world.c
+ * Description: A simple C program that prints "Hello, World!" to the console.
+ */
+
+#include <stdio.h>
+
+int main() {
+    // Print message to console
+    printf("Hello, World!\n");
+
+    return 0; // Indicate successful program execution
+}
